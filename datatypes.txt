@@ -14,12 +14,10 @@ and of no other data types.
 supertype of itself and of no other data types.
 
 User-defined Data type:
-- defined by a standard, by an implementation, or 
-by an application.
+- defined by a standard, by an implementation, or by an application.
 
 Constructed Data types : 
-- is specified using one of SQL's data type 
-constructors, ARRAY, REF, and ROW.
+- is specified using one of SQL's data type constructors, ARRAY, REF, and ROW.
 - ARRAY - array type
 - REF - reference type
 - ROW - row type
@@ -45,9 +43,7 @@ Deletion of Existing types:
 
 
 Unicode : 
-provides a unique number for every character, no matter 
-what the platform, no matter what the program, no matter
-what the language.
+provides a unique number for every character, no matter what the platform, no matter what the program, no matter what the language.
 
 character string types:-------------------------------
 A character string type is described by a character string 
