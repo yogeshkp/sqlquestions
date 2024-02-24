@@ -1,0 +1,152 @@
+Data Types : 
+A Data Type is a set of representable values.
+
+SQL supports 3 data types :
+- Pre-defined Data types
+- constructed data types
+- user-defined data types
+
+Predefined Data Types : 
+- are called Built-in data types.
+- every predefined data types is a subtype of itself
+and of no other data types.
+- it follows that every predefined data type is a 
+supertype of itself and of no other data types.
+
+User-defined Data type:
+- defined by a standard, by an implementation, or 
+by an application.
+
+Constructed Data types : 
+- is specified using one of SQL's data type 
+constructors, ARRAY, REF, and ROW.
+- ARRAY - array type
+- REF - reference type
+- ROW - row type
+
+SQL data types examples : 
+- character string
+- Numeric 
+- Boolean
+- Datatime
+- Interval
+
+-new features : 
+New data types :
+- BIGINT
+- MULTISET
+
+Extensions to existing data types :
+- Unbounded ARRAY
+
+Deletion of Existing types:
+- BIT 
+- BIT VARYING
+
+
+Unicode : 
+provides a unique number for every character, no matter 
+what the platform, no matter what the program, no matter
+what the language.
+
+character string types:-------------------------------
+A character string type is described by a character string 
+data type descriptor:
+
+CHARACTER : 
+CHARACTER VARYING:
+CHARACTER LARGE OBJECT (CLOB):
+NATIONAL CHARACTER (NCHAR):
+NATIONAL CHARACTER VARYING (NCHAR VARYING):
+NATIONAL CHARACTER LARGE OBJECT(NCLOB):
+
+CREATE TABLE test (   
+id    DECIMAL PRIMARY KEY,   
+col1 CHAR(8),       -- exactly 8 characters   
+col2 VARCHAR(100),   -- up to 100 characters   
+col3 CLOB            -- very large strings 
+);
+
+
+boolean type:----------------------------------------
+the data type boolean comprises the distinct truth 
+values true and false.
+the boolean data type also supports the unknown truth 
+value as the null value unless prohibited by a NOT NULL 
+constraint.
+
+CREATE TABLE test (   
+id    DECIMAL PRIMARY KEY,   
+col1 BOOLEAN
+);
+
+
+binary large object types:--------------------------
+
+A binary string is a sequence of octets that does not 
+have either a character set or collation associated 
+with it and is described by a binary data type descriptor.
+
+CREATE TABLE test (   
+id    DECIMAL PRIMARY KEY,   
+col1  BINARY(8),      -- exactly 8 byte   
+col2  VARBINARY(140), -- up to 140 byte   
+col3  BLOB            -- very large data: store picture, sound ... 
+);
+
+
+numerical types :----------------------------------
+Numeric data types represent numerical values.
+
+CREATE TABLE test (   
+id    DECIMAL PRIMARY KEY,   
+name  VARCHAR(100),   -- up to 100 characters 
+col1  DECIMAL(5,2),    -- three digits before the decimal and two behind   
+col2  SMALLINT,        -- no decimal point   
+col3  INTEGER,         -- no decimal point   
+col4  BIGINT,           -- no decimal point. 
+col5  FLOAT(2),        -- two or more digits after the decimal place   
+col6  REAL,   
+col7  DOUBLE PRECISION
+);
+
+
+datatime types:-----------------------------------
+the datatime data type represent the dat and time of the day
+
+CREATE TABLE test (   
+id   DECIMAL PRIMARY KEY,   
+col1 DATE,    -- store year, month and day (Oracle: plus hour, minute and seconds)   
+col2 TIME,   
+col3 TIMESTAMP(9), -- a timestamp with 9 digits after the decimal of seconds   
+col4 TIMESTAMP WITH TIME ZONE   -- a timestamp including the name of a timezone   
+);
+
+interval type:------------------------------------
+It stores the quantity of time between two datetime values.
+For example between 10:00 and 12:30 is an interval of 02:30 
+(2 hours and 30 minutes).
+There are two classes of intervals. 
+The first one called year-month intervals, includes no fields
+other than YEAR and MONTH, though not both are required. 
+The other class called day-time intervals that can include any
+fields other than YEAR or MONTH.
+
+
+CREATE TABLE test (   
+id    DECIMAL PRIMARY KEY,   
+col1 INTERVAL YEAR TO MONTH,   
+col2 INTERVAL DAY TO SECOND(6)   -- an interval with 6 digits after the decimal of seconds
+);
+
+
+
+XML types :---------------------------------------
+
+XML	Stores XML data. It can be used wherever a SQL datatype
+is allowed, such as a column of a table.
+
+CREATE TABLE test(
+id    DECIMAL PRIMARY KEY,   
+col1  XML 
+);
